@@ -1,128 +1,9 @@
-create database
- use ananya
-switched to db ananya
-
-
-
-
-
-
-
-MongoDB shell version v5.0.5
-Build Info: {
-    "version": "5.0.5",
-    "gitVersion": "d65fd89df3fc039b5c55933c0f71d647a54510ae",
-    "openSSLVersion": "OpenSSL 1.1.1f  31 Mar 2020",
-    "modules": [],
-    "allocator": "tcmalloc",
-    "environment": {
-        "distmod": "ubuntu2004",
-        "distarch": "x86_64",
-        "target_arch": "x86_64"
-    }
-}
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ db
-db: command not found
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ show dbs
-
-Command 'show' not found, but can be installed with:
-
-sudo apt install mailutils-mh  # version 1:3.7-2.1, or
-sudo apt install mmh           # version 0.4-2
-sudo apt install nmh           # version 1.7.1-6
-
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ start mongoDB
-
-Command 'start' not found, did you mean:
-
-  command 'stars' from snap stars (2.7jrc3)
-  command 'startx' from deb xinit (1.4.1-0ubuntu2)
-  command 'rstart' from deb x11-session-utils (7.7+4)
-  command 'tart' from deb tart (3.10-1build1)
-  command 'stat' from deb coreutils (8.30-3ubuntu2)
-
-See 'snap info <snapname>' for additional versions.
-
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ cd ~
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ mkdir -p mongodb/data/db
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ mongo -version
-MongoDB shell version v5.0.5
-Build Info: {
-    "version": "5.0.5",
-    "gitVersion": "d65fd89df3fc039b5c55933c0f71d647a54510ae",
-    "openSSLVersion": "OpenSSL 1.1.1f  31 Mar 2020",
-    "modules": [],
-    "allocator": "tcmalloc",
-    "environment": {
-        "distmod": "ubuntu2004",
-        "distarch": "x86_64",
-        "target_arch": "x86_64"
-    }
-}
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ create db
-
-Command 'create' not found, did you mean:
-
-  command 'pcreate' from deb pbuilder-scripts (22)
-
-Try: sudo apt install <deb name>
-
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ sudo apt install <mongo>
-bash: syntax error near unexpected token `newline'
 hdoop@admin1-HP-280-G4-MT-Business-PC:~$ mongo
 MongoDB shell version v5.0.5
 connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
 Implicit session: session { "id" : UUID("fe94edb1-b1ea-46da-94a6-d872a28a8ded") }
 MongoDB server version: 5.0.5
 ================
-Warning: the "mongo" shell has been superseded by "mongosh",
-which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
-an upcoming release.
-For installation instructions, see
-https://docs.mongodb.com/mongodb-shell/install/
-================
-Welcome to the MongoDB shell.
-For interactive help, type "help".
-For more comprehensive documentation, see
-	https://docs.mongodb.com/
-Questions? Try the MongoDB Developer Community Forums
-	https://community.mongodb.com
----
-The server generated these startup warnings when booting: 
-        2022-04-05T08:52:30.097+05:30: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
-        2022-04-05T08:52:32.004+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
----
----
-        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
-        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
-
-        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
-        and anyone you share the URL with. MongoDB may use this information to make product
-        improvements and to suggest MongoDB products and deployment options to you.
-
-        To enable free monitoring, run the following command: db.enableFreeMonitoring()
-        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
----
-> show db
-uncaught exception: Error: don't know how to show [db] :
-shellHelper.show@src/mongo/shell/utils.js:1211:11
-shellHelper@src/mongo/shell/utils.js:838:15
-@(shellhelp2):1:1
-> show database
-uncaught exception: Error: don't know how to show [database] :
-shellHelper.show@src/mongo/shell/utils.js:1211:11
-shellHelper@src/mongo/shell/utils.js:838:15
-@(shellhelp2):1:1
-> show dbs
-admin   0.000GB
-config  0.000GB
-local   0.000GB
-> use database_abc
-switched to db database_abc
-> use mydb
-switched to db mydb
-> db
-mydb
 > show dbs
 admin   0.000GB
 config  0.000GB
@@ -132,15 +13,6 @@ switched to db ananya
 > db
 ananya
 > show dbs
-admin   0.000GB
-config  0.000GB
-local   0.000GB
-> show databses
-uncaught exception: Error: don't know how to show [databses] :
-shellHelper.show@src/mongo/shell/utils.js:1211:11
-shellHelper@src/mongo/shell/utils.js:838:15
-@(shellhelp2):1:1
-> show databases
 admin   0.000GB
 config  0.000GB
 local   0.000GB
@@ -156,8 +28,6 @@ local   0.000GB
 admin   0.000GB
 config  0.000GB
 local   0.000GB
-> use admin
-switched to db admin
 > db.dropDatabase()
 {
 	"ok" : 0,
@@ -169,74 +39,10 @@ switched to db admin
 admin   0.000GB
 config  0.000GB
 local   0.000GB
-> db.createCollection(abc,123)
-uncaught exception: ReferenceError: abc is not defined :
-@(shell):1:1
-> db.createCollection(name, options)
-uncaught exception: ReferenceError: name is not defined :
-@(shell):1:1
-> use ananya
-switched to db ananya
 > db.createCollection("mycollection")
 { "ok" : 1 }
-> show collection
-uncaught exception: Error: don't know how to show [collection] :
-shellHelper.show@src/mongo/shell/utils.js:1211:11
-shellHelper@src/mongo/shell/utils.js:838:15
-@(shellhelp2):1:1
 > show collections
 mycollection
-> db.mycollection.insert(name:"Ananya",age:19,sex:'F')
-uncaught exception: SyntaxError: missing ) after argument list :
-@(shell):1:27
-> db.mycollection.insert(name:"Ananya",age:19,sex:"F")
-uncaught exception: SyntaxError: missing ) after argument list :
-@(shell):1:27
-> show dbs
-admin   0.000GB
-ananya  0.000GB
-config  0.000GB
-local   0.000GB
-> db.mycollection.insertOne(name:"Ananya",age:19,sex:"F")
-uncaught exception: SyntaxError: missing ) after argument list :
-@(shell):1:30
-> db.mycollection.insertOne(
-... {
-... First_Name: "Radhika",
-... Last_Name: "Sharma",
-... Date_Of_Birth: "1995-09-26",
-... e_mail: "radhika_sharma.123@gmail.com",
-... phone: "9848022338"
-... db.mycollection.insert(name:"Ananya",age:19,sex:'F')
-[1]+  Stopped                 mongo
-hdoop@admin1-HP-280-G4-MT-Business-PC:~$ mongo
-MongoDB shell version v5.0.5
-connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
-Implicit session: session { "id" : UUID("e2bdc0f2-8bb5-485d-863a-ced95cc434f4") }
-MongoDB server version: 5.0.5
-================
-Warning: the "mongo" shell has been superseded by "mongosh",
-which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
-an upcoming release.
-For installation instructions, see
-https://docs.mongodb.com/mongodb-shell/install/
-================
----
-The server generated these startup warnings when booting: 
-        2022-04-05T08:52:30.097+05:30: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
-        2022-04-05T08:52:32.004+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
----
----
-        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
-        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
-
-        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
-        and anyone you share the URL with. MongoDB may use this information to make product
-        improvements and to suggest MongoDB products and deployment options to you.
-
-        To enable free monitoring, run the following command: db.enableFreeMonitoring()
-        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
----
 > show dbs
 admin   0.000GB
 ananya  0.000GB
@@ -246,48 +52,11 @@ local   0.000GB
 switched to db ananya
 > show collections
 mycollection
-> db.empDetails.insertOne(
-... {
-... First_Name: "Radhika",
-... Last_Name: "Sharma",
-... Date_Of_Birth: "1995-09-26",
-... e_mail: "radhika_sharma.123@gmail.com",
-... phone: "9848022338"
-... 
-... )}
-uncaught exception: SyntaxError: missing } after property list :
-@(shell):9:0
-> db.mycollection.insertOne( { First_Name: "Sooraj", Last_Name: "Hoysal", Date_Of_Birth: "2000-09-26", e_mail: "soorajhoysal123@gmail.com", phone: "9841722338"  )}
-uncaught exception: SyntaxError: missing } after property list :
-@(shell):1:159
-> db.mycollection.insertOne( { First_Name": "Sooraj", Last_Name: "Hoysal", Date_Of_Birth: "2000-09-26", e_mail: "soorajhoysal123@gmail.com", phone: "9841722338"  )}
-uncaught exception: SyntaxError: missing : after property id :
-@(shell):1:39
-> 
-> db.mycollection.insertOne( { First_Name": "Sooraj", Last_Name: "Hoysal", Date_Of_Birth: "2000-09-26", e_mail: "soorajhoysal123@gmail.com", phone: "9841722338"  )}
-uncaught exception: SyntaxError: missing : after property id :
-@(shell):1:39
-> db.mycollection.insertOne( { "First_Name": "Sooraj", "Last_Name": "Hoysal", "Date_Of_Birth": "2000-09-26", "e_mail": "soorajhoysal123@gmail.com", "phone": "9841722338"  )}
-uncaught exception: SyntaxError: missing } after property list :
-@(shell):1:169
-> db.mycollection.insertOne({"Fname":"Sooraj","Lname":"Hoysal","Date_Of_Birth":"2000-09-26","phone":"9841722338")}
-uncaught exception: SyntaxError: missing } after property list :
-@(shell):1:110
-> db.mycollection.insertOne( { First_Name": "Sooraj", Last_Name: "Hoysal", Date_Of_Birth: "2000-09-26", e_mail: "soorajhoysal123@gmail.com", phone: "9841722338"  })
-uncaught exception: SyntaxError: missing : after property id :
-@(shell):1:39
 > db.mycollection.insertOne({"Fname":"Sooraj","Lname":"Hoysal","Date_Of_Birth":"2000-09-26","phone":"9841722338"})
 {
 	"acknowledged" : true,
 	"insertedId" : ObjectId("624bc191b0dff44e7ec0466d")
 }
-> db.mycollection.insertMany([{"Fname":"Manvesh","Lname":"Sandhu","Date_Of_Birth":"1999-09-12","phone":"7841726528"})
-... {"Fname":"Sooraj","Lname":"Hoysal","Date_Of_Birth":"2000-09-26","phone":"9841722338"}])
-uncaught exception: SyntaxError: missing ] after element list :
-@(shell):1:114
-> db.mycollection.insertMany([{"Fname":"Manvesh","Lname":"Sandhu","Date_Of_Birth":"1999-09-12","phone":"7841726528"} {"Fname":"Sooraj","Lname":"Hoysal","Date_Of_Birth":"2000-09-26","phone":"9841722338"}])
-uncaught exception: SyntaxError: missing ] after element list :
-@(shell):1:115
 > db.mycollection.insertMany([{"Fname":"Manvesh","Lname":"Sandhu","Date_Of_Birth":"1999-09-12","phone":"7841726528"},{"Fname":"Sahana","Lname":"Nayaka","Date_Of_Birth":"2000-08-26","phone":"8861023372"}])
 {
 	"acknowledged" : true,
@@ -296,9 +65,6 @@ uncaught exception: SyntaxError: missing ] after element list :
 		ObjectId("624bc31db0dff44e7ec0466f")
 	]
 }
-> db.mycollection.Find()
-uncaught exception: TypeError: db.mycollection.Find is not a function :
-@(shell):1:1
 > db.mycollection.find()
 { "_id" : ObjectId("624bc191b0dff44e7ec0466d"), "Fname" : "Sooraj", "Lname" : "Hoysal", "Date_Of_Birth" : "2000-09-26", "phone" : "9841722338" }
 { "_id" : ObjectId("624bc31db0dff44e7ec0466e"), "Fname" : "Manvesh", "Lname" : "Sandhu", "Date_Of_Birth" : "1999-09-12", "phone" : "7841726528" }
